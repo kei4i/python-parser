@@ -5,12 +5,12 @@ nosotros, nosotras {{c1::trabajamos}}
 vosotros, vosotras {{c1::trabajáis}}
 ellos, ellas, ustedes {{c1::trabajan}}
 vos	{{c1::trabajás}}"
-dar,"yo {{c1::doy}}{br}
-tú {{c1::das}}{br}
-él, ella, usted {{c1::da}}{br}
-nosotros, nosotras {{c1::damos}}{br}
-vosotros, vosotras {{c1::dais}}{br}
-ellos, ellas, ustedes {{c1::dan}}{br}
-vos {{c1::das}}{br}"
+dar,"yo {{c1::doy}}
+tú {{c1::das}}
+él, ella, usted {{c1::da}}
+nosotros, nosotras {{c1::damos}}
+vosotros, vosotras {{c1::dais}}
+ellos, ellas, ustedes {{c1::dan}}
+vos {{c1::das}}"
 
 
