@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import	requests
 import csv
 from bs4 import BeautifulSoup, Tag
@@ -46,7 +47,7 @@ print(vocubulary)
 #     f.write(' '.join(map(str, vocubulary)))
 
 with open('students.csv', 'w', newline='') as file:
-    writer = csv.writer(file, quoting=csv.QUOTE_NONE, delimiter=';')
+    writer = csv.writer(file, quoting=csv.QUOTE_MINIMAL, delimiter=';')
     writer.writerows(vocubulary)
 
 # row_list = [ [1, "Ash Ketchum", "English"],
