@@ -25,35 +25,15 @@ for i, dar in enumerate(verbs):
     for tr in imperativoAlfirmativo:
         firstColumn = tr.find('th')
         secondColumn = tr.find('td')
-        if type(firstColumn) == Tag and type(secondColumn) == Tag and firstColumn.text != "-" and secondColumn != "-":
-             columnSecond+="<div>" + firstColumn.text + " {{c1::" + secondColumn.text + "}}</div>"
+        if type(firstColumn) == Tag and type(secondColumn) == Tag:
+            secondColumnText = secondColumn.text.strip()
+            if secondColumnText != "-" and secondColumnText != "–":
+                print(secondColumn.text)
+                # print(secondColumn.text)
+                columnSecond+="<div>" + firstColumn.text + " {{c1::" + secondColumn.text + "}}</div>"
     vocubulary.append([dar, f"{columnSecond}"])
 print(vocubulary)
-        # for td in tr:
-            # print(td)
 
-            # if type(td) == Tag:
-                # print(td)
-                # print('/n/n')
-                # td.text
-                # if td.text != 'afirmativo' and td.text != '–':
-                #     columnSecond+=f"<div>{td.text}</div>"
-                # else:
-                #     print('2')
-                #     if td.text != 'afirmativo' or td.text != '-':
-                #         columnSecond+=f"{{{{td.text}}}}"
-                #         print('1')
-# with open('readme.txt', 'w') as f:
-#     f.write(' '.join(map(str, vocubulary)))
-
-with open('students.csv', 'w', newline='') as file:
+with open('imperativoAlfirmativo.csv', 'w', newline='') as file:
     writer = csv.writer(file, quoting=csv.QUOTE_MINIMAL, delimiter=';')
     writer.writerows(vocubulary)
-
-# row_list = [ [1, "Ash Ketchum", "English"],
-#              [2, "Gary Oak", "Mathematics"],
-#              [3, "Brock Lesner", "Physics"]]
-
-# with open('students.csv', 'w', newline='') as file:
-#     writer = csv.writer(file, quoting=csv.QUOTE_NONNUMERIC, delimiter=';')
-#     writer.writerows(row_list)
