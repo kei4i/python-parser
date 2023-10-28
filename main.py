@@ -14,10 +14,11 @@ for i, verb in enumerate(verbs):
     block = soup.find('table', id = "contenttable")
     allTables = block.find_all('table', class_ = "neoConj")
     indicativoPresente = allTables[0]
+    indicativoPreterito = allTables[2]
     imperativoAlfirmativo = allTables[15]
     imperativoNegativo = allTables[16]
     columnSecond = ''
-    for tr in indicativoPresente:
+    for tr in indicativoPreterito:
         firstColumn = tr.find('th')
         secondColumn = tr.find('td')
         if type(firstColumn) == Tag and type(secondColumn) == Tag:
@@ -26,6 +27,6 @@ for i, verb in enumerate(verbs):
                 columnSecond+="<div>" + firstColumn.text + " {{c1::" + secondColumn.text + "}}</div>"
     vocubulary.append([verb, f"{columnSecond}"])
 print(vocubulary)
-with open('indicativoPresente.csv', 'w', newline='') as file:
+with open('indicativoPreterito.csv', 'w', newline='') as file:
     writer = csv.writer(file, quoting=csv.QUOTE_MINIMAL, delimiter=';')
     writer.writerows(vocubulary)
